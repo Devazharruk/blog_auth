@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+@layer utilities {
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+
+}
