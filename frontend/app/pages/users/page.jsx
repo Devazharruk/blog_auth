@@ -14,7 +14,7 @@ const Page = () => {
   const getUsers = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/users");
+      const res = await axios.get("https://blog-auth-api.vercel.app/users");
       setData(res.data);
       toast.success("Users fetched successfully!");
       setLoading(false);
@@ -27,7 +27,7 @@ const Page = () => {
   // Delete user
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${id}`);
+      await axios.delete(`https://blog-auth-api.vercel.app/users/${id}`);
       setData(data.filter((user) => user._id !== id));
       toast.success("User deleted successfully!");
       localStorage.removeItem("token");
@@ -70,7 +70,7 @@ const Page = () => {
     if (!validateForm()) return; // Ensure the form is valid before proceeding
 
     try {
-      await axios.put(`http://localhost:5000/users/${id}`, formData);
+      await axios.put(`https://blog-auth-api.vercel.app/users/${id}`, formData);
       setData(
         data.map((user) =>
           user._id === id
