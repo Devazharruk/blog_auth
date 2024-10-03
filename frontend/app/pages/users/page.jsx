@@ -93,7 +93,7 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center py-10">
+    <div className="min-h-[90.8vh] bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center py-10">
       <div className="bg-white bg-opacity-10 backdrop-blur-lg shadow-lg rounded-lg p-8 max-w-3xl w-full">
         <h1 className="text-3xl font-bold text-center text-white mb-6">
           User Management

@@ -66,7 +66,7 @@ const LoginForm = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-r from-green-400 to-blue-500">
+    <div className="flex items-center justify-center h-[90.8vh] bg-gradient-to-r from-green-400 to-blue-500">
       <div className="bg-white bg-opacity-10 backdrop-blur-md shadow-lg rounded-lg p-10 max-w-md w-full">
         <h2 className="text-3xl font-semibold text-center text-white mb-6">
           Login

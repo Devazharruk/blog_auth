@@ -60,7 +60,7 @@ const SignupForm = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-purple-600">
+    <div className="flex items-center justify-center h-[90.8vh] bg-gradient-to-r from-blue-500 to-purple-600">
       <div className="bg-white bg-opacity-10 backdrop-blur-md shadow-lg rounded-lg p-10 max-w-md w-full">
         <h2 className="text-3xl font-semibold text-center text-white mb-6">
           Signup
