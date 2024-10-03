@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import AuthRouter from "./routes/authroute.js";
 import connectDB from "./config/db.js";
 import User from "./models/User.js";
-import rateLimit from "express-rate-limit";
 
 const app = express();
 const PORT = process.env.PORT || 5000;

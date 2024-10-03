@@ -31,7 +31,7 @@ const LoginForm = () => {
   const fetchData = async () => {
     try {
       const response = await axios.post(
-        `https://blog-auth-api.vercel.app/api/auth/login`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
         formData
       );
       savetokentoLocalstorage(response.data.token);
