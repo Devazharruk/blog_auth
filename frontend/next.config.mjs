@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        destination: "https://blog-auth-api.vercel.app/api/:path*", // Proxy to Backend
+        destination: "https://blog-auth-api.vercel.app/:path*", // Proxy to Backend
       },
     ];
   },
