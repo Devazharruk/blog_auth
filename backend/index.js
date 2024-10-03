@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import AuthRouter from "./routes/authroute.js";
 import connectDB from "./config/db.js";
 import User from "./models/User.js";
+import rateLimit from "express-rate-limit";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,6 +23,11 @@ app.use(
 );
 
 app.use(express.json());
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+});
+app.use(limiter);
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 app.get("/", (req, res) => {
@@ -69,7 +75,7 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 
+connectDB();
 app.listen(PORT, () => {
-  connectDB();
   console.log(`Server is running on port ${PORT}`);
 });
