@@ -5,10 +5,10 @@ import AuthRouter from "./routes/authroute.js";
 import connectDB from "./config/db.js";
 import User from "./models/User.js";
 import mongoose from "mongoose";
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-dotenv.config();
 
 app.use(
   cors({
