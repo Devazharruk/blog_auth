@@ -9,14 +9,25 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 dotenv.config();
-app.use(cors({
-  app.use(cors({
-  origin: 'http://localhost:3000',  
-  credentials: true,               
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],  
-  
-}));
-}));
+
+app.options("*", cors()); // Enable preflight for all routes
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  next();
+});
+
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
@@ -64,7 +75,6 @@ app.delete("/users/:id", async (req, res) => {
     res.status(500).json({ message: "Error deleting user", error });
   }
 });
-
 
 app.listen(PORT, () => {
   connectDB();
