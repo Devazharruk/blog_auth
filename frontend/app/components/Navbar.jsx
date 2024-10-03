@@ -76,8 +76,8 @@ const Navbar = () => {
           <Link href="#about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
             About
           </Link>
-          <Link href="#services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-            Services
+          <Link href="/pages/users" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+            Users
           </Link>
           <Link href="#contact" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
             Contact
