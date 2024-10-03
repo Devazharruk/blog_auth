@@ -70,7 +70,7 @@ const Page = () => {
     if (!validateForm()) return; // Ensure the form is valid before proceeding
 
     try {
-      await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/${id}`, formData);
+      await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/users/${id}`, formData);
       setData(
         data.map((user) =>
           user._id === id

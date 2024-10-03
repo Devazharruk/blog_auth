@@ -21,13 +21,13 @@ const Navbar = () => {
             <Link href="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
               Home
             </Link>
-            <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <Link href="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
               About
             </Link>
             <Link href="/pages/users" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
               Users
             </Link>
-            <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <Link href="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
               Contact
             </Link>
           </div>
@@ -73,13 +73,13 @@ const Navbar = () => {
           <Link href="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
             Home
           </Link>
-          <Link href="#about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+          <Link href="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
             About
           </Link>
           <Link href="/pages/users" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
             Users
           </Link>
-          <Link href="#contact" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+          <Link href="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
             Contact
           </Link>
         </div>

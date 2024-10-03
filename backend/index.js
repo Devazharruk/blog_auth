@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import AuthRouter from "./routes/authroute.js";
 import connectDB from "./config/db.js";
 import User from "./models/User.js";
-
+import mongoose from "mongoose";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -32,12 +32,20 @@ app.use("/api/auth", AuthRouter);
 
 // read
 app.get("/users", async (req, res) => {
-  const users = await User.find();
-  res.json(users);
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
 // Update User
 app.put("/users/:id", async (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ message: "Invalid user ID" });
+  }
+
   try {
     const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true, // Returns the updated document
